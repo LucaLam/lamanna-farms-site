@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
 import "./about.scss";
+import owner from "../../assets/owner.jpg";
 
 class About extends Component {render() {
     return (
       <div className="about__section">
         <h1 className="heading-1">About Us</h1>
         <div className="about__content-container">
-            <img className="about__img" src="" alt="headshot of owner" />
+            <img className="about__img" src={owner} alt="headshot of owner" />
             <p className="about__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida
             lacinia lacus at sagittis. Integer condimentum mattis lorem, sed

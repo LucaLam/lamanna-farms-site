@@ -1,1 +1,27 @@
 @import "../../sass/base.scss";
+
+.about{
+
+    background-color: $primary-color;
+
+    &__section{
+        margin-top: 4rem;
+    }
+
+    &__content-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__img{
+        width: 40%;
+        border-radius: 8px;
+        box-shadow: $box-shadow;
+    }
+
+    &__text{
+        width: 70%;
+        font-size: 1.6rem;
+        padding: 0 2rem;
+    }
+}

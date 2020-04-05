@@ -1,0 +1,9 @@
+@import '../../sass/base.scss';
+
+.shop{
+    background-color: $primary-color;
+    
+    &__section{
+        margin-top: 4rem; 
+    }
+}
