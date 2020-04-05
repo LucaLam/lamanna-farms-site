@@ -1,0 +1,13 @@
+@import "../../sass/base.scss";
+
+.hero{
+
+    &__container{
+        height: 70vh;
+
+        background-image: linear-gradient( to bottom, rgba($primary-color, 0.6),rgba($primary-color, 0.5)), url(../../assets/hero.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+}
