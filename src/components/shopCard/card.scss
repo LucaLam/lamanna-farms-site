@@ -3,14 +3,11 @@
 .card{
 
     &__container{
-        width: 20%;
-        height: 60%;
+        width: 25%;
         padding: 2rem;
         margin: 0 2rem 2rem 0;
-
         border-radius: 3px;
         box-shadow: $box-shadow;
-
         display: flex;
         flex-direction: column;
         transition: all .3s;
@@ -22,7 +19,7 @@
 
     &__img{
         width:100%;
-        height:50%;
+        height:60%;
         display: block;
         margin: 0 auto;
     }
@@ -30,6 +27,7 @@
     &__description{
         margin-top: 1rem;
         font-size: 1.2rem;
+        display: inline-block;
     }
 
     &__price{
@@ -37,6 +35,7 @@
         text-align: right;
         font-size: 1.5rem;
         margin-top: auto;
+        
     }
 
 }

@@ -5,6 +5,7 @@ import Header from "./components/header/header";
 import Hero from "./components/hero/hero";
 import About from "./pages/About/about";
 import Shop from "./pages/Shop/Shop";
+import Form from './pages/Form/Form';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <About />
       <Shop/>
+      <Form />
     </div>
   );
 }
