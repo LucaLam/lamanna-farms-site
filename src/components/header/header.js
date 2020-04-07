@@ -13,7 +13,7 @@ class Header extends Component {
                 <ul className="nav__list">
                     <li className="nav__item">About</li>
                     <li className="nav__item">Shop</li>
-                    <li className="nav__item">Contact Us</li>
+                    <li className="nav__item">Place an Order</li>
                 </ul>
             </div>
         )
