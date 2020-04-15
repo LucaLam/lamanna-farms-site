@@ -11,9 +11,9 @@ class Header extends Component {
                     <img className="header__logo" src={logo} alt="Lamanna Farms"/>
                 </div>
                 <ul className="nav__list">
-                    <li className="nav__item">About</li>
-                    <li className="nav__item">Shop</li>
-                    <li className="nav__item">Place an Order</li>
+                    <li className="nav__item"><a href="#about" className="nav__link">About</a></li>
+                    <li className="nav__item"><a href="#shop" className="nav__link">Shop</a></li>
+                    <li className="nav__item"><a href="#contact" className="nav__link">Place an Order</a></li>
                 </ul>
             </div>
         )

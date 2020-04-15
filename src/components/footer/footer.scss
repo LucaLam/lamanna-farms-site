@@ -1,0 +1,20 @@
+@import "../../sass/base.scss";
+
+.footer{
+    height: 10vh;
+    width: 98vw;
+    background-color: $secondary-color;
+
+    &__copyright-container{
+        display: inline-block;
+        font-size: 1.2rem;
+        height: 100%;
+        width: 90%;
+
+        .copyright-tag{
+        color: $primary-color;
+        padding-left: 2rem;
+        transform: translateY(3rem);
+        }
+    }
+}

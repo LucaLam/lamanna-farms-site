@@ -8,8 +8,10 @@
     }
 
     &__product-container{
-        width: 100vw;
+        width: 98vw;
         padding: 2rem;
+        padding-right: 0;
+        padding-left: 0;
 
         display: flex;
         flex-wrap: wrap;

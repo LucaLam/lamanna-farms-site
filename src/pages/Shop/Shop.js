@@ -14,7 +14,7 @@ export default class Shop extends Component {
 
     render() {
         return (
-            <div className="shop__section">
+            <div className="shop__section" id="shop">
                 <h1 className="heading-1">Shop</h1>
                 <div className="shop__product-container">
                 {

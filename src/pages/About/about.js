@@ -5,7 +5,7 @@ import owner from "../../assets/owner.jpg";
 
 class About extends Component {render() {
     return (
-      <div className="about__section">
+      <div className="about__section" id="about">
         <h1 className="heading-1">About Us</h1>
         <div className="about__content-container">
             <img className="about__img" src={owner} alt="headshot of owner" />
