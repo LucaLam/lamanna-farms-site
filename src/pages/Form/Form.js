@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
 import './form.scss';
+
+import emailjs from 'emailjs-com';
 
 export default class Form extends Component {
     state = {
@@ -8,90 +9,50 @@ export default class Form extends Component {
         email: '',
         name: '',
         formSubmitted: false,
-        formEmailSent: false
     }
 
-    //changes state to store name value
-    handleName = (event) =>{
-        this.setState({
-            name: event.target.value
-        });
-    }
-
-    //changes state to store email value
     handleChange = (event) =>{
         this.setState({
-            email: event.target.value
-        });
-    }
-
-    //changes state to store order message
-    handleOrder = (event) =>{
-        this.setState({
-            message: event.target.value
+            [event.target.name]: event.target.value 
         });
     }
 
     handleSubmit = (event) =>{
         event.preventDefault();
 
-        const {
-            REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-            REACT_APP_EMAILJS_TEMPLATEID: template,
-            REACT_APP_EMAILJS_USERID: user
-        } = process.env
+        emailjs.sendForm('default_service', 'process_order', '#form', 'user_HKfUM3NaK6LRFVxMXq3S5')
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
 
-        const {email, message, name} = this.state
+    this.setState({
+        formSubmitted: true
+    })
+}
 
-        this.sendOrder(
-            template,
-            email,
-            receiverEmail,
-            message,
-            name,
-            user
-        )
-
-        this.setState({
-            formSubmitted: true
-        })
-        }
-
-        sendOrder(templateID, email, message, name, user){
-            console.log("User", user)
-            window.emailjs.send('default_service', templateID, {
-                name,
-                email,
-                message
-            },
-            user)
-            .then(res => {
-                console.log(res);
-                this.setState({
-                    formEmailSent: true
-                });
-            })
-            .catch(err => console.error("Failed to send order."))
-        }
 
     render() {
-
+        console.log(this.state);
         return (
             <div className="contact-section" id="contact">
                 <h1 className='heading-1'>Place an order</h1>
                 <p className="disclaimer">Please use the form below to place an order. Please allow 24 - 48 hours for any prepared foods. <br/>Orders will be filled once an E-transfer is sent.</p>
                 <div className='test'>
-                <form className="form" onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit} id="form">
                     <input className="form__input" 
                     placeholder="Name"
+                    name="name"
                     value={this.state.name}
-                    onChange={this.handleName}
+                    onChange={this.handleChange}
                     ></input>
                     <label className="form__label">Name</label>
 
                     <input className="form__input" 
                     placeholder="E-mail"
                     type='email'
+                    name='email'
                     onChange={this.handleChange}
                     value={this.state.email}
                     ></input>
@@ -101,7 +62,8 @@ export default class Form extends Component {
                     className="form__txt" 
                     placeholder="Please tell us your order here."
                     required
-                    onChange={this.handleOrder}
+                    name='message'
+                    onChange={this.handleChange}
                     value={this.state.message}
                     ></textarea>
 
