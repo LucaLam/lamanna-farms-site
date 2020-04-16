@@ -34,7 +34,7 @@ export default class Form extends Component {
 
 
     render() {
-        console.log(this.state);
+        const {name, email, message,formSubmitted} =this.state;
         return (
             <div className="contact-section" id="contact">
                 <h1 className='heading-1'>Place an order</h1>
@@ -44,7 +44,7 @@ export default class Form extends Component {
                     <input className="form__input" 
                     placeholder="Name"
                     name="name"
-                    value={this.state.name}
+                    value={name}
                     onChange={this.handleChange}
                     ></input>
                     <label className="form__label">Name</label>
@@ -54,7 +54,7 @@ export default class Form extends Component {
                     type='email'
                     name='email'
                     onChange={this.handleChange}
-                    value={this.state.email}
+                    value={email}
                     ></input>
                     <label className="form__label">E-mail</label>
 
@@ -64,7 +64,7 @@ export default class Form extends Component {
                     required
                     name='message'
                     onChange={this.handleChange}
-                    value={this.state.message}
+                    value={message}
                     ></textarea>
 
                     <button className="form__btn"
@@ -72,6 +72,9 @@ export default class Form extends Component {
                     value='submit'
                     >Submit</button>
                 </form>
+                {
+                    formSubmitted ? alert('The form has been submitted') : null 
+                }
                 </div>
             </div>
         )

@@ -6,7 +6,7 @@ import logo from "../../assets/logo.png";
 class Header extends Component {
     render() {
         return (
-            <div className="header">
+            <div className="header" id="header">
                 <div className="header__logo-container">
                     <img className="header__logo" src={logo} alt="Lamanna Farms"/>
                 </div>

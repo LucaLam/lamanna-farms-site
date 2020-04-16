@@ -1,6 +1,7 @@
 @import "../../sass/base.scss";
 
 .footer{
+    position: relative;
     height: 10vh;
     width: 98vw;
     background-color: $secondary-color;
@@ -16,5 +17,22 @@
         padding-left: 2rem;
         transform: translateY(3rem);
         }
+    }
+}
+
+.arrow-container{
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    color: $primary-color;
+    width: 5rem;
+    height: 5rem;
+    background-color: $secondary-color;
+    border-radius: 100%;
+
+    .arrow{
+        position: relative;
+        left: 2.2rem;
+        top: 3px;
     }
 }
